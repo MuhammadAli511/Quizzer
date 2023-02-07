@@ -23,6 +23,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class SignUp extends AppCompatActivity {
 
@@ -71,6 +78,24 @@ public class SignUp extends AppCompatActivity {
                                 db.collection("Users").document(id).set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void unused) {
+                                        db.collection("Grades").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                                if (task.isSuccessful()){
+                                                    List<String> gradeNames = new ArrayList<>();
+                                                    for (QueryDocumentSnapshot document : task.getResult()){
+                                                        String grade = document.getString("name");
+                                                        gradeNames.add(grade);
+                                                    }
+                                                    Map<String, String> userGrades = new HashMap<>();
+                                                    for (int i = 0; i < gradeNames.size(); i++){
+                                                        userGrades.put(gradeNames.get(i), "false");
+                                                    }
+                                                    db.collection("Users").document(id).update("grades", userGrades);
+
+                                                }
+                                            }
+                                        });
                                         progressDialog.dismiss();
                                         Toast.makeText(SignUp.this, "Account Created Successfully", Toast.LENGTH_LONG).show();
                                         Intent intent = new Intent(SignUp.this, HomeScreen.class);
