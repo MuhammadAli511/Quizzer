@@ -1,7 +1,6 @@
 package com.example.quizapp.Adapters;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.quizapp.AddGrade;
 import com.example.quizapp.HomeScreen;
 import com.example.quizapp.Models.Grade;
 import com.example.quizapp.Models.Requests;
@@ -21,29 +19,28 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class GradeAdapter extends RecyclerView.Adapter<GradeAdapter.ViewHolder>  {
+public class RequestableGradeAdapter extends RecyclerView.Adapter<RequestableGradeAdapter.ViewHolder>  {
     List<Grade> gradesList;
     Context context;
 
 
-    public GradeAdapter(List<Grade> gradesList, Context context) {
+    public RequestableGradeAdapter(List<Grade> gradesList, Context context) {
         this.gradesList = gradesList;
         this.context = context;
     }
 
     @NonNull
     @Override
-    public GradeAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.request_classes_row, parent, false);
+    public RequestableGradeAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.request_grade_row, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull GradeAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RequestableGradeAdapter.ViewHolder holder, int position) {
         int pos = position;
         Grade grades = gradesList.get(position);
         holder.gradeName.setText(grades.getName());

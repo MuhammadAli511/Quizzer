@@ -6,18 +6,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.Toast;
 
-import com.example.quizapp.Adapters.GradeAdapter;
+import com.example.quizapp.Adapters.RequestableGradeAdapter;
 import com.example.quizapp.Models.Grade;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +23,7 @@ public class AddGrade extends AppCompatActivity {
 
     RecyclerView requestableClassesRecyclerViewMain;
     List<Grade> gradesList;
-    GradeAdapter gradeAdapter;
+    RequestableGradeAdapter gradeAdapter;
     FirebaseFirestore db;
 
     @Override
@@ -61,7 +57,7 @@ public class AddGrade extends AppCompatActivity {
                                 gradesList.add(new Grade(entry.getKey()));
                             }
                         }
-                        gradeAdapter = new GradeAdapter(gradesList, AddGrade.this);
+                        gradeAdapter = new RequestableGradeAdapter(gradesList, AddGrade.this);
                         requestableClassesRecyclerViewMain.setAdapter(gradeAdapter);
                         gradeAdapter.notifyDataSetChanged();
                     }
