@@ -11,19 +11,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.quizapp.HomeScreen;
 import com.example.quizapp.Models.Grade;
-import com.example.quizapp.Models.Requests;
 import com.example.quizapp.R;
-import com.example.quizapp.SingleGrade;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
+import com.example.quizapp.Student.SingleGrade;
 
 import java.util.List;
-import java.util.Map;
 
 public class AllowedGradeAdapter extends RecyclerView.Adapter<AllowedGradeAdapter.ViewHolder>  {
     List<Grade> gradesList;

@@ -18,25 +18,37 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".SingleGrade"
+            android:name=".Admin.CreateQuestion"
             android:exported="false" />
         <activity
-            android:name=".AdminPage"
+            android:name=".Admin.CreateGrade"
             android:exported="false" />
         <activity
-            android:name=".AdminSignIn"
+            android:name=".Admin.CreateSubject"
             android:exported="false" />
         <activity
-            android:name=".AddGrade"
+            android:name=".Admin.ApproveRequests"
             android:exported="false" />
         <activity
-            android:name=".HomeScreen"
+            android:name=".Student.SingleGrade"
             android:exported="false" />
         <activity
-            android:name=".SignUp"
+            android:name=".Admin.AdminPage"
             android:exported="false" />
         <activity
-            android:name=".SignIn"
+            android:name=".Admin.AdminSignIn"
+            android:exported="false" />
+        <activity
+            android:name=".Student.AddGrade"
+            android:exported="false" />
+        <activity
+            android:name=".Student.HomeScreen"
+            android:exported="false" />
+        <activity
+            android:name=".Student.SignUp"
+            android:exported="false" />
+        <activity
+            android:name=".Student.SignIn"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

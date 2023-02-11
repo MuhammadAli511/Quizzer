@@ -9,6 +9,10 @@ public class Requests {
         this.gradeName = gradeName;
     }
 
+    public Requests() {
+
+    }
+
     public String getUserId() {
         return userId;
     }

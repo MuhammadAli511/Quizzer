@@ -1,4 +1,4 @@
-package com.example.quizapp;
+package com.example.quizapp.Student;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,8 +10,8 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.example.quizapp.Adapters.AllowedGradeAdapter;
-import com.example.quizapp.Adapters.RequestableGradeAdapter;
 import com.example.quizapp.Models.Grade;
+import com.example.quizapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;

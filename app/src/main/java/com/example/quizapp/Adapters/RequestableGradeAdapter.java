@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.quizapp.HomeScreen;
+import com.example.quizapp.Student.HomeScreen;
 import com.example.quizapp.Models.Grade;
 import com.example.quizapp.Models.Requests;
 import com.example.quizapp.R;

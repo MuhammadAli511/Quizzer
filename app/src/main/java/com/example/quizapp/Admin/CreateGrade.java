@@ -1,14 +1,16 @@
-package com.example.quizapp;
+package com.example.quizapp.Admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class SingleGrade extends AppCompatActivity {
+import com.example.quizapp.R;
+
+public class CreateGrade extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_single_grade);
+        setContentView(R.layout.activity_create_grade);
     }
 }

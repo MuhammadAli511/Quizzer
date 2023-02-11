@@ -5,19 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f0f5ff"
-    tools:context=".Student.AddGrade">
+    tools:context=".Admin.ApproveRequests">
 
     <TextView
-        android:id="@+id/requestableClassesTextViewMain"
+        android:id="@+id/requesttextbox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:textSize="30dp"
+        android:textSize="25dp"
         android:layout_marginTop="8dp"
         android:textStyle="bold"
         android:gravity="center"
         android:fontFamily="@font/derkonserif"
-        android:text="Request for Classes">
+        android:text="Pending Requests">
 
     </TextView>
 
@@ -25,9 +25,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="wrap_content"
         android:layout_marginTop="30dp"
-        android:layout_below="@id/requestableClassesTextViewMain"
+        android:layout_below="@id/requesttextbox"
         android:layout_height="wrap_content"
-        android:id="@+id/requestableClassesRecyclerViewMain">
+        android:id="@+id/pendingrequestsrecyclerview">
 
     </androidx.recyclerview.widget.RecyclerView>
 
