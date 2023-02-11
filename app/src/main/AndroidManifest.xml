@@ -18,6 +18,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Admin.CreateQuestionTwo"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.CreateThematic"
+            android:exported="false" />
+        <activity
             android:name=".Admin.CreateQuestion"
             android:exported="false" />
         <activity

@@ -17,7 +17,7 @@ public class AdminPage extends AppCompatActivity {
 
     ImageView logout;
     TextView totalStudentsCount, totalRequestsCount;
-    Button requestsButton, gradeButton, subjectButton, questionButton;
+    Button requestsButton, gradeButton, subjectButton, questionButton, thematicButton;
     FirebaseFirestore db;
     FirebaseAuth mAuth;
     FirebaseUser user;
@@ -34,6 +34,7 @@ public class AdminPage extends AppCompatActivity {
         gradeButton = findViewById(R.id.gradeButton);
         subjectButton = findViewById(R.id.subjectButton);
         questionButton = findViewById(R.id.questionButton);
+        thematicButton = findViewById(R.id.thematicButton);
         db = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
@@ -59,6 +60,10 @@ public class AdminPage extends AppCompatActivity {
 
         questionButton.setOnClickListener(v -> {
             startActivity(new Intent(AdminPage.this, CreateQuestion.class));
+        });
+
+        thematicButton.setOnClickListener(v -> {
+            startActivity(new Intent(AdminPage.this, CreateThematic.class));
         });
 
 
