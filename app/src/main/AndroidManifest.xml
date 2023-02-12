@@ -18,6 +18,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Student.SingleQuestion"
+            android:exported="false" />
+        <activity
+            android:name=".Student.SingleThematic"
+            android:exported="false" />
+        <activity
             android:name=".Student.SingleSubject"
             android:exported="false" />
         <activity
