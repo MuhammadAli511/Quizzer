@@ -17,6 +17,7 @@ import com.example.quizapp.Student.SingleGrade;
 
 import java.util.List;
 
+
 public class AllowedGradeAdapter extends RecyclerView.Adapter<AllowedGradeAdapter.ViewHolder>  {
     List<Grade> gradesList;
     Context context;

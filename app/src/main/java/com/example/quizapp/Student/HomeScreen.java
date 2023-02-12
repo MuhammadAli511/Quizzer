@@ -48,8 +48,6 @@ public class HomeScreen extends AppCompatActivity {
         allowedClassesRecyclerViewMain.setLayoutManager(layoutManager2);
         getData2();
 
-
-
     }
 
     public void getData2(){

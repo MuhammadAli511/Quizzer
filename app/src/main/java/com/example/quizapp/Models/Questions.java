@@ -11,7 +11,7 @@ public class Questions {
     String question;
     String correctAnswer;
 
-    public Questions(String thematicAreaName, String gradeName, String subjectName, String option1, String option2, String option3, String option4, String question, String correctAnswer) {
+    public Questions(String gradeName, String subjectName, String thematicAreaName, String question, String option1, String option2, String option3, String option4, String correctAnswer) {
         this.thematicAreaName = thematicAreaName;
         this.subjectName = subjectName;
         this.gradeName = gradeName;

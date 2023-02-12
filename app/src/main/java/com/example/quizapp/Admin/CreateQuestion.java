@@ -166,7 +166,6 @@ public class CreateQuestion extends AppCompatActivity implements AdapterView.OnI
                 startActivity(intent);
             }
 
-
         });
     }
 
