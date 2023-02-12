@@ -90,6 +90,8 @@ public class SignUp extends AppCompatActivity {
                                                         userGrades.put(gradeNames.get(i), "false");
                                                     }
                                                     db.collection("Users").document(id).update("grades", userGrades);
+                                                    db.collection("Users").document(id).update("obtainedMarks", "0");
+                                                    db.collection("Users").document(id).update("totalMarks", "0");
 
                                                 }
                                             }

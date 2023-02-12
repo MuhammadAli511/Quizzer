@@ -37,6 +37,7 @@
                 android:layout_marginBottom="10dp"
                 android:textSize="20dp"
                 android:inputType="textLongMessage|textMultiLine"
+                android:textColor="@color/black"
                 android:text="Answer 1" />
 
             <RadioButton
@@ -46,6 +47,7 @@
                 android:layout_marginBottom="10dp"
                 android:textSize="20dp"
                 android:inputType="textLongMessage|textMultiLine"
+                android:textColor="@color/black"
                 android:text="Answer 2" />
 
             <RadioButton
@@ -55,6 +57,7 @@
                 android:layout_marginBottom="10dp"
                 android:textSize="20dp"
                 android:inputType="textLongMessage|textMultiLine"
+                android:textColor="@color/black"
                 android:text="Answer 3" />
 
             <RadioButton
@@ -64,6 +67,7 @@
                 android:layout_marginBottom="10dp"
                 android:textSize="20dp"
                 android:inputType="textLongMessage|textMultiLine"
+                android:textColor="@color/black"
                 android:text="Answer 4" />
 
         </RadioGroup>

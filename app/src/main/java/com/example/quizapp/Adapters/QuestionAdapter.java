@@ -50,6 +50,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
                 intent.putExtra("option3", questions.getOption3());
                 intent.putExtra("option4", questions.getOption4());
                 intent.putExtra("correctAnswer", questions.getCorrectAnswer());
+                intent.putExtra("questionId", questions.getQuestionId());
                 context.startActivity(intent);
             }
         });

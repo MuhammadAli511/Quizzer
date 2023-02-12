@@ -13,6 +13,7 @@ import com.example.quizapp.Adapters.ThematicAdapter;
 import com.example.quizapp.Models.Questions;
 import com.example.quizapp.Models.ThematicArea;
 import com.example.quizapp.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -53,8 +54,19 @@ public class SingleThematic extends AppCompatActivity {
         db.collection("Questions").whereEqualTo("gradeName", gradeName).whereEqualTo("subjectName", subjectName).whereEqualTo("thematicAreaName", thematicHeadingText.getText().toString()).get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 for (DocumentSnapshot document : task.getResult()) {
-                    Questions questions = new Questions(document.get("gradeName").toString(), document.get("subjectName").toString(), document.get("thematicAreaName").toString(), document.get("question").toString(), document.get("option1").toString(), document.get("option2").toString(), document.get("option3").toString(), document.get("option4").toString(), document.get("correctAnswer").toString());
-                    questionsList.add(questions);
+                    Questions questions = new Questions(document.get("questionId").toString(),document.get("gradeName").toString(), document.get("subjectName").toString(), document.get("thematicAreaName").toString(), document.get("question").toString(), document.get("option1").toString(), document.get("option2").toString(), document.get("option3").toString(), document.get("option4").toString(), document.get("correctAnswer").toString());
+                    FirebaseAuth auth = FirebaseAuth.getInstance();
+                    String userId = auth.getCurrentUser().getUid();
+                    String solvedId = questions.getQuestionId() + userId;
+                    db.collection("Solved").document(solvedId).get().addOnCompleteListener(task1 -> {
+                        if (task1.isSuccessful()) {
+                            DocumentSnapshot document1 = task1.getResult();
+                            if (!document1.exists()) {
+                                questionsList.add(questions);
+                            }
+                        }
+                    });
+
                 }
                 questionAdapter = new QuestionAdapter(questionsList, this);
                 questionsRecyclerView.setAdapter(questionAdapter);

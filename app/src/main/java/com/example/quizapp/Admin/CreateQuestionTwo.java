@@ -57,11 +57,15 @@ public class CreateQuestionTwo extends AppCompatActivity {
 
             Questions questionObject = new Questions(gradeName, subjectName, thematicAreaName, question, option1, option2, option3, option4, correctAnswer);
             db.collection("Questions").add(questionObject).addOnSuccessListener(documentReference -> {
-                Toast.makeText(CreateQuestionTwo.this, "Question created successfully", Toast.LENGTH_SHORT).show();
-                // clear stack and return to admin dashboard
-                Intent intent1 = new Intent(CreateQuestionTwo.this, AdminPage.class);
-                intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent1);
+                String questionId = documentReference.getId();
+                db.collection("Questions").document(questionId).update("questionId", questionId).addOnSuccessListener(aVoid -> {
+                    Toast.makeText(CreateQuestionTwo.this, "Question created successfully", Toast.LENGTH_SHORT).show();
+                    Intent intent1 = new Intent(CreateQuestionTwo.this, AdminPage.class);
+                    intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent1);
+                    finish();
+                }).addOnFailureListener(e -> Toast.makeText(CreateQuestionTwo.this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+
             }).addOnFailureListener(e -> {
                 Toast.makeText(CreateQuestionTwo.this, "Error creating question", Toast.LENGTH_SHORT).show();
             });

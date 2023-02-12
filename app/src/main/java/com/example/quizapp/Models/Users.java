@@ -6,6 +6,8 @@ public class Users {
     String password;
     String userId;
     String phoneNum;
+    String obtainedMarks;
+    String totalMarks;
 
     public Users(){}
 
@@ -26,6 +28,21 @@ public class Users {
         this.phoneNum = phoneNum;
     }
 
+    public String getObtainedMarks() {
+        return obtainedMarks;
+    }
+
+    public void setObtainedMarks(String obtainedMarks) {
+        this.obtainedMarks = obtainedMarks;
+    }
+
+    public String getTotalMarks() {
+        return totalMarks;
+    }
+
+    public void setTotalMarks(String totalMarks) {
+        this.totalMarks = totalMarks;
+    }
 
     public String getPhoneNum() {
         return phoneNum;
