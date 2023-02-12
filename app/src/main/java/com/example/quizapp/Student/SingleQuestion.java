@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.quizapp.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -84,6 +85,7 @@ public class SingleQuestion extends AppCompatActivity {
     }
 
     public void correctSolve() {
+        Toast.makeText(this, "Correct Answer", Toast.LENGTH_SHORT).show();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String userId = user.getUid();
         String solvedId = questionId + userId;
@@ -108,22 +110,17 @@ public class SingleQuestion extends AppCompatActivity {
     }
 
     public void wrongSolve() {
+        Toast.makeText(this, "Wrong Answer, Try Again Later", Toast.LENGTH_SHORT).show();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String userId = user.getUid();
-        String solvedId = questionId + userId;
-        Map<String, Object> solved = new HashMap<>();
-        solved.put("status", "solved");
-        db.collection("Solved").document(solvedId).set(solved);
         db.collection("Users").document(userId).get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
-                String obtainedMarks = task.getResult().getString("obtainedMarks");
                 String totalMarks = task.getResult().getString("totalMarks");
                 int totalMarksInt = Integer.parseInt(totalMarks);
                 totalMarksInt++;
                 db.collection("Users").document(userId).update("totalMarks", String.valueOf(totalMarksInt));
             }
         });
-
         finish();
     }
 }

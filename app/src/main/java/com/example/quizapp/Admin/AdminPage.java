@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.quizapp.R;
+import com.example.quizapp.Student.HomeScreen;
+import com.example.quizapp.Student.SignIn;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -41,6 +43,8 @@ public class AdminPage extends AppCompatActivity {
 
         logout.setOnClickListener(v -> {
             mAuth.signOut();
+            Intent intent = new Intent(AdminPage.this, AdminSignIn.class);
+            startActivity(intent);
             finish();
         });
 
@@ -83,7 +87,7 @@ public class AdminPage extends AppCompatActivity {
         });
     }
 
-    // RETURN TO ACTIVITY UPDATE STATS
+
     @Override
     protected void onResume() {
         super.onResume();

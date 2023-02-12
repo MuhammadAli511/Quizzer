@@ -20,6 +20,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:textSize="30dp"
+            android:id="@+id/welcomeText"
             android:layout_marginLeft="10dp"
             android:lines="2"
             android:maxLines="2"
@@ -27,13 +28,33 @@
             android:text="Hi, let's start learning and growing together">
 
         </TextView>
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:id="@+id/scoreBox"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/welcomeText"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:text="Score: 0/0">
+
+        </TextView>
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:id="@+id/addIcon"
-            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
             android:src="@drawable/baseline_add_24">
 
+        </ImageView>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/logoutIcon"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/baseline_logout_24_2">
         </ImageView>
     </RelativeLayout>
 

@@ -12,7 +12,7 @@ public class Questions {
     String correctAnswer;
     String questionId;
 
-    public Questions(String questionId, String gradeName, String subjectName, String thematicAreaName, String question, String option1, String option2, String option3, String option4, String correctAnswer) {
+    public Questions(String gradeName, String subjectName, String thematicAreaName, String question, String option1, String option2, String option3, String option4, String correctAnswer) {
         this.thematicAreaName = thematicAreaName;
         this.subjectName = subjectName;
         this.gradeName = gradeName;
@@ -22,7 +22,6 @@ public class Questions {
         this.option4 = option4;
         this.question = question;
         this.correctAnswer = correctAnswer;
-        this.questionId = questionId;
     }
 
     public String getQuestionId() {
